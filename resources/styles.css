@@ -135,7 +135,7 @@ body {
     grid-template-rows: 75px 1fr 50px;
     grid-template-areas: 
     "header header header"
-    "aside main ad-space"
+    "aside main right-space"
     "footer footer footer";
 }
 
@@ -156,8 +156,8 @@ body {
 }
 
 
-#ad-space {
-    grid-area: ad-space;
+#right-space {
+    grid-area: right-space;
 }
 
 p {
