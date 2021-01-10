@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252a;
+}
+
+#header h1 {
+    font-size: 32px !important;
+}
+
+#footer h1 {
+    font-size: 26px !important;
+}
+
+#main h2 {
+    font-size: 16px !important;
+}
+
+#main p {
+    font-size: 12px;
+}
+
+#aside p {
+    font-size: 8px;
+}
+
+li, a, button, #header h1, #footer h1, p, h2{     /*added footer stuff*/
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #edf0f1;
+    text-decoration: none;
+    
+    
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+/*aside container stuff*/
+
+aside {
+    text-align: center;
+    padding: 10px 10%;
+}
+
+/*footer container stuff*/
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+.footer-nav {
+    order: 1;
+    margin-right: auto;
+}
+
+.links li:nth-child(1) {
+    padding: 0px 20px 0 0;
+}
+
+#footer h1 {
+    order: 2;
+}
+
+/*end footer stuff here*/
+
+#header h1 {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.links {
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+    /*fixes vertical centering the same way as the button*/
+    padding: 6px 20px 10px 0;
+}
+
+.links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.links li a:hover {
+    color: #0088a9;
+}
+
+button {
+    margin-left: 20px;
+    /*adjusts the centering for all lowercase text*/
+    padding: 6px 25px 10px 25px;
+    /**/
+    background-color: rgba(0,136,169,1);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+button:hover {
+    background-color: rgba(0,136,169,0.8);
+}
+
+#header h1:hover, #footer h1:hover {    /*added footer stuff*/
+    color: #0088a9;
+}
+
+/*GRID work will go here and anything added to other classes
+  will be commented "GRID"*/
+
+body {
+/*BODY ELEMENT SIZE*/
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-gap: 10px;
+    /*middle column should not stay 60rem max width--
+    --this is for testing. 86rem max is default--*/
+    grid-template-columns: 1fr minmax(0, 60rem) 1fr;
+    grid-template-rows: 75px 1fr 50px;
+    grid-template-areas: 
+    "header header header"
+    "aside main ad-space"
+    "footer footer footer";
+}
+
+#header {
+    grid-area: header;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+#main {
+    grid-area: main;
+}
+
+#aside {
+    grid-area: aside;
+}
+
+
+#google-ad {
+    grid-area: ad-space;
+}
+
+p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: justify;
+}
